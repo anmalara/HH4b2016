@@ -24,19 +24,11 @@ bkg_norm=`grep ' Background number of '${function}_${range}' = ' ${dirName}/${bg
 if [ $4 -eq 1 ];
         then
 	case "$mass" in
-<<<<<<< HEAD
-	260) bias=0.1464;; 270) bias=0.1360;;	300) bias=-0.2192;;
-	esac
-	else 
-        case "$mass" in
-	300) bias=0.0154;; 350) bias=-0.0224;; 400) bias=0.0182;; 450) bias=0.0130;; 500) bias=0.0029;; 550) bias=-0.0092;; 600) bias=-0.0035;;
-=======
 	260) bias=-0.041;; 270) bias=-0.075;;	300) bias=-0.056;;
 	esac
 	else 
         case "$mass" in
 	300) bias=0.037;; 350) bias=0.006;; 400) bias=-0.001;; 450) bias=-0.003;; 500) bias=-0.003;; 550) bias=-0.004;; 600) bias=0.001;;
->>>>>>> Daniel/master
         esac
 fi
 

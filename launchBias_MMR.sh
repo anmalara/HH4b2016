@@ -12,13 +12,7 @@
   background_MMR_2="_${function_MMR_2}_${range_MMR_2}"
   if [ $5 -eq 1 ];
           then
-<<<<<<< HEAD
-          masses_MMR=() #550 600 650 750 800 900 1000) #650 750 800 900 1000) #550 600) #750 800 900 1000)
-          strenght_MMR=(0.0 0.1 0.2 0.3)
-          else masses_MMR=() #550 600 650 750 800 900 1000)
-=======
           masses_MMR=(1200) #550 600 650 750 800 900 1000 1200)
->>>>>>> Daniel/master
           strenght_MMR=(0.0 0.1 0.2 0.3)
           else masses_MMR=()
           strenght_MMR=()
@@ -49,21 +43,12 @@
                   mkdir out
                   echo ${source_dir_MMR}/MMR_${i}${background_MMR_1}
                   echo ${source_dir_MMR}/MMR_${i}${background_MMR_2}
-<<<<<<< HEAD
-                  cp ../../../../${source_dir_MMR}/MMR_${i}${background_MMR_1}/w_*.root .
-                  cp ../../../../${source_dir_MMR}/MMR_${i}${background_MMR_1}/datacard*txt .
-                  cp ../../../../${source_dir_MMR}/MMR_${i}${background_MMR_2}/w_*.root .
-                  cp ../../../../${source_dir_MMR}/MMR_${i}${background_MMR_2}/datacard*txt .
-                  combine datacard_${i}${background_MMR_1}.txt -M GenerateOnly -m $i -t ${n_toys} --saveToys -s ${seed} --expectSignal=$signal_strenght -n ${name} --toysNoSystematic
-                  combine datacard_${i}${background_MMR_2}.txt -M MaxLikelihoodFit -m $i --expectSignal=$signal_strenght --rMin=-10 --rMax=10 -t ${n_toys} --toysFile=higgsCombine${name}.GenerateOnly.mH$i.${seed}.root -s ${seed} -n ${name}_${i} --robustFit=1  #--saveNormalizations --plot --out out 
-=======
                   #cp ../../../../${source_dir_MMR}/MMR_${i}${background_MMR_1}/w_*.root .
                   #cp ../../../../${source_dir_MMR}/MMR_${i}${background_MMR_1}/datacard*txt .
                   #cp ../../../../${source_dir_MMR}/MMR_${i}${background_MMR_2}/w_*.root .
                   #cp ../../../../${source_dir_MMR}/MMR_${i}${background_MMR_2}/datacard*txt .
                   #combine datacard_${i}${background_MMR_1}.txt -M GenerateOnly -m $i -t ${n_toys} --saveToys -s ${seed} --expectSignal=$signal_strenght -n ${name} --toysNoSystematic
                   #combine datacard_${i}${background_MMR_2}.txt -M MaxLikelihoodFit -m $i --expectSignal=$signal_strenght --rMin=-10 --rMax=10 -t ${n_toys} --toysFile=higgsCombine${name}.GenerateOnly.mH$i.${seed}.root -s ${seed} -n ${name}_${i} --robustFit=1  #--saveNormalizations --plot --out out 
->>>>>>> Daniel/master
           done
           root -l -b -q drawBias_MMR.C\($signal_strenght,\"$name\",\"$background_MMR_1\",\"$background_MMR_2\"\)
   done

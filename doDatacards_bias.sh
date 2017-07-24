@@ -24,19 +24,11 @@ trigger_norm=`grep 'trig'${mass}' ' ${trgLogName} | awk '{print $2}'`
 if [ $4 -eq 1 ];
         then
         case "$mass" in
-<<<<<<< HEAD
-        550) bias=-0.1081;; 600) bias=0.1244;; 650) bias=0.1698;; 750) bias=-0.2380;; 800) bias=-0.1523;; 900) bias=-0.0907;; 1000) bias=0.0297;;
-        esac
-        else
-        case "$mass" in
-        550) bias=-0.0396;; 600) bias=0.095;; 650) bias=0.1535;; 750) bias=-0.1249;; 800) bias=-0.1706;; 900) bias=-0.1212;; 1000) bias=0.0359;;
-=======
         550) bias=0.215;; 600) bias=0.057;; 650) bias=-0.078;; 750) bias=-0.203;; 800) bias=-0.130;; 900) bias=-0.044;; 1000) bias=0.050;;
         esac
         else
         case "$mass" in
         550) bias=0.215;; 600) bias=0.057;; 650) bias=-0.078;; 750) bias=-0.203;; 800) bias=-0.130;; 900) bias=-0.044;; 1000) bias=0.050;;
->>>>>>> Daniel/master
         esac    
 fi
 

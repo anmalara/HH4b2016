@@ -128,7 +128,7 @@ void drawBias_MMR(const double signal_strenght=1.0, std::string Filename="", std
             
             hists[dd][i] = new TH1D(name,title,100,-20,20);
             hists_mean[dd][i] = new TH1D(name_mean,title_mean,100,-10,10);
-            hists_sigma[dd][i] = new TH1D(name_sigma,title_sigma,300,-0.,20.);
+            hists_sigma[dd][i] = new TH1D(name_sigma,title_sigma,100,-0.,2.);
             hists[dd][i]->SetMarkerColor(kBlack);
             hists_mean[dd][i]->SetMarkerColor(kBlack);
             hists_sigma[dd][i]->SetMarkerColor(kBlack);
