@@ -250,10 +250,10 @@ void BackgroundPrediction_Kinematic_Split(int range_lo_1, int range_hi_1, double
     
     string type;
 
-    RooRealVar par_crystal_0("par_crystal_0", "par_crystal_0", 0.01, 5.1);
-    RooRealVar par_crystal_1("par_crystal_1", "par_crystal_1", 0.01, 5.1);
+    RooRealVar par_crystal_0("par_crystal_0", "par_crystal_0", 0.01, 9.1);
+    RooRealVar par_crystal_1("par_crystal_1", "par_crystal_1", 0.01, 9.1);
     RooRealVar par_crystal_2("par_crystal_2", "par_crystal_2", 240, 280);
-    RooRealVar par_crystal_3("par_crystal_3", "par_crystal_3", 3, 30);
+    RooRealVar par_crystal_3("par_crystal_3", "par_crystal_3", 3, 40);
     RevCrystalBall f_crystal("f_crystal","f_crystal", *x_1, par_crystal_0, par_crystal_1, par_crystal_2, par_crystal_3);
     RooFitResult *r_crystal=f_crystal.fitTo(pred_1, RooFit::Range(range_lo_1, range_hi_1), RooFit::Save());
     
@@ -293,9 +293,9 @@ void BackgroundPrediction_Kinematic_Split(int range_lo_1, int range_hi_1, double
     type= "SB_crystal_"+to_string(range_lo_1)+"_"+to_string(range_hi_1);
     c_crystal->SaveAs((dest_dir+"/"+"BackgroundFit_"+type+".png").c_str());
     
-    RooRealVar par_gaus_exp_0("par_gaus_exp_0", "par_gaus_exp_0", 260, 300);
-    RooRealVar par_gaus_exp_1("par_gaus_exp_1", "par_gaus_exp_1", 9, 40);
-    RooRealVar par_gaus_exp_2("par_gaus_exp_2", "par_gaus_exp_2", 0.05, 3.1);
+    RooRealVar par_gaus_exp_0("par_gaus_exp_0", "par_gaus_exp_0", 250, 330);
+    RooRealVar par_gaus_exp_1("par_gaus_exp_1", "par_gaus_exp_1", 0.1, 15.7);
+    RooRealVar par_gaus_exp_2("par_gaus_exp_2", "par_gaus_exp_2", 0.01, 7.5);
     GaussExp f_gaus_exp("f_gaus_exp", "Background Prediction PDF", *x_1, par_gaus_exp_0, par_gaus_exp_1, par_gaus_exp_2);
     RooFitResult *r_gaus_exp=f_gaus_exp.fitTo(pred_1, RooFit::Range(range_lo_1, range_hi_1), RooFit::Save());
     
@@ -332,9 +332,9 @@ void BackgroundPrediction_Kinematic_Split(int range_lo_1, int range_hi_1, double
     
     
     
-    RooRealVar par_novo_0("par_novo_0", "par_novo_0", 250, 301);
-    RooRealVar par_novo_1("par_novo_1", "par_novo_1", 0, 54);
-    RooRealVar par_novo_2("par_novo_2", "par_novo_2", -100, 100);
+    RooRealVar par_novo_0("par_novo_0", "par_novo_0", 150, 160);
+    RooRealVar par_novo_1("par_novo_1", "par_novo_1", 0.01, 150);
+    RooRealVar par_novo_2("par_novo_2", "par_novo_2", -10, 1);
     RooNovosibirsk f_novo("f_novo", "Background Prediction PDF", *x_2, par_novo_0, par_novo_1, par_novo_2);
     RooFitResult *r_novo=f_novo.fitTo(pred_2, RooFit::Range(range_lo_2, range_hi_2), RooFit::Save());
     

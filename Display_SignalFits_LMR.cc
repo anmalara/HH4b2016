@@ -388,7 +388,7 @@ RooPlot* fitSignal(TH1F *h, std::string mass, int color, TLegend *leg, Params &p
   else
   {
     rangeLo=500., rangeHi=700.;
-    sg_p0=new RooRealVar("sg_p0", "sg_p0", 560., 650.);
+    sg_p0=new RooRealVar("sg_p0", "sg_p0", 560., 750.);
     sg_p1=new RooRealVar("sg_p1", "sg_p1", 7., 40.);
     sg_p2=new RooRealVar("sg_p2", "sg_p2", 500., 650.);
     sg_p3=new RooRealVar("sg_p3", "sg_p3", 10., 130.);

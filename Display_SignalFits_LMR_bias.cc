@@ -388,7 +388,7 @@ RooPlot* fitSignal(TH1F *h, std::string mass, int color, TLegend *leg, Params &p
   else
   {
     rangeLo=500., rangeHi=700.;
-    sg_p0=new RooRealVar("sg_p0", "sg_p0", 560., 650.);
+    sg_p0=new RooRealVar("sg_p0", "sg_p0", 560., 750.);
     sg_p1=new RooRealVar("sg_p1", "sg_p1", 7., 40.);
     sg_p2=new RooRealVar("sg_p2", "sg_p2", 500., 650.);
     sg_p3=new RooRealVar("sg_p3", "sg_p3", 10., 130.);
@@ -439,7 +439,7 @@ RooPlot* fitSignal(TH1F *h, std::string mass, int color, TLegend *leg, Params &p
   RooRealVar signal_p1_1("signal_p1_1", "signal_p1_1", sg_p1->getVal());
   RooRealVar signal_p2_1("signal_p2_1", "signal_p2_1", sg_p2->getVal());
   RooRealVar signal_p3_1("signal_p3_1", "signal_p3_1", sg_p3->getVal());
-  RooRealVar signal_p4_1("signal_p4_1", "signal_p4v", sg_p4->getVal());
+  RooRealVar signal_p4_1("signal_p4_1", "signal_p4_1", sg_p4->getVal());
   RooGaussian signalCore_fixed_1("signalCore_fixed_1", "Signal Prediction", *x, signal_p0_1, signal_p1_1);
   RooGaussian signalComb_fixed_1("signalComb_fixed_1", "Combinatoric", *x, signal_p2_1, signal_p3_1);
   RooAddPdf signal_bkg("signal_bkg", "signal", RooArgList(signalCore_fixed_1, signalComb_fixed_1), signal_p4_1);
@@ -693,14 +693,21 @@ int Display_SignalFits_LMR_bias(std::string dir_preselection="PreselectedWithReg
   double bias;
   if(range==1){
 	switch(_mass){
+<<<<<<< HEAD
 		case 260: bias=0.1464; break;
 		case 270: bias=0.1360; break;
 		case 300: bias=-0.2192; break;
+=======
+		case 260: bias=-0.041; break;
+		case 270: bias=-0.076; break;
+		case 300: bias=-0.056; break;
+>>>>>>> Daniel/master
 		default: break;
 	}
   }
   else{
 	switch(_mass){
+<<<<<<< HEAD
 		case 300: bias=0.0154; break;
 		case 350: bias=-0.0224; break;
 		case 400: bias=0.0182; break;
@@ -708,6 +715,15 @@ int Display_SignalFits_LMR_bias(std::string dir_preselection="PreselectedWithReg
 		case 500: bias=0.0029; break;
 		case 550: bias=-0.0092; break;
 		case 600: bias=-0.0035; break;
+=======
+		case 300: bias=0.037; break;
+		case 350: bias=0.006; break;
+		case 400: bias=-0.001; break;
+		case 450: bias=-0.003; break;
+		case 500: bias=-0.003; break;
+		case 550: bias=-0.004; break;
+		case 600: bias=0.001; break;
+>>>>>>> Daniel/master
 		default: break;
 	}
   }
@@ -1096,4 +1112,5 @@ int Display_SignalFits_LMR_bias(std::string dir_preselection="PreselectedWithReg
 
 return 0;
 }
+
 

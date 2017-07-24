@@ -2,7 +2,10 @@ location=$1
 
 cd PreselectedWithRegressionDeepCSV_JECm1
 echo "JEC +"
+<<<<<<< HEAD
 source processPreSelection_Graviton.sh ${location}
+=======
+>>>>>>> Daniel/master
 source processPreSelection_Radion.sh ${location}
 echo "JEC LMR"
 cd LMRSelection_chi2 
@@ -13,7 +16,10 @@ cd ../MMRSelection_chi2
 cd ../../
 cd PreselectedWithRegressionDeepCSV_JECp1
 echo "JEC -"
+<<<<<<< HEAD
 source processPreSelection_Graviton.sh ${location}
+=======
+>>>>>>> Daniel/master
 source processPreSelection_Radion.sh ${location}
 cd LMRSelection_chi2
 echo "JEC LMR"
@@ -24,7 +30,10 @@ echo "JEC MMR"
 cd ../../
 echo "JER -"
 cd PreselectedWithRegressionDeepCSV_JERm1
+<<<<<<< HEAD
 source processPreSelection_Graviton.sh ${location}
+=======
+>>>>>>> Daniel/master
 source processPreSelection_Radion.sh ${location}
 echo "JER LMR"
 cd LMRSelection_chi2
@@ -35,7 +44,10 @@ cd ../MMRSelection_chi2
 cd ../../
 echo "JER +"
 cd PreselectedWithRegressionDeepCSV_JERp1
+<<<<<<< HEAD
 source processPreSelection_Graviton.sh ${location}
+=======
+>>>>>>> Daniel/master
 source processPreSelection_Radion.sh ${location}
 cd LMRSelection_chi2
 echo "JER LMR"
@@ -47,7 +59,10 @@ cd ../../
 
 echo "bTag -"
 cd PreselectedWithRegressionDeepCSV_bTagm1
+<<<<<<< HEAD
 source processPreSelection_Graviton.sh ${location}
+=======
+>>>>>>> Daniel/master
 source processPreSelection_Radion.sh ${location}
 echo "bTag LMR"
 cd LMRSelection_chi2
@@ -58,7 +73,10 @@ cd ../MMRSelection_chi2
 cd ../../
 echo "bTag +"
 cd PreselectedWithRegressionDeepCSV_bTagp1
+<<<<<<< HEAD
 source processPreSelection_Graviton.sh ${location}
+=======
+>>>>>>> Daniel/master
 source processPreSelection_Radion.sh ${location}
 cd LMRSelection_chi2
 echo "bTag LMR"

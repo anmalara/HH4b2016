@@ -1,4 +1,5 @@
 #include <TROOT.h>
+#include "TSystem.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
@@ -269,9 +270,25 @@ void DrawLimitPlot(std::vector<double> mass, double ymin, double ymax, std::stri
 		std::ifstream file(filename.c_str(), ios::in);
 		std::cout<<"Opened file "<<filename<<std::endl;
 		std::string line;
-		getline(file, line);
-		getline(file, line);
-		getline(file, line);
+//		getline(file, line);
+//		getline(file, line);
+//		getline(file, line);
+                bool found= false;
+
+                while (!found && !file.eof() && !gSystem->AccessPathName(filename.c_str())) {
+
+                          getline(file, line);
+
+                          std::size_t pos = line.find("-- Asymptotic --");  
+
+                          if (pos!=std::string::npos){
+
+                          found=true;
+
+                          }
+
+                }
+
 
 		getline(file, line); obs[i]=atof(line.substr(line.find("<")+1).c_str())*norm;
 		getline(file, line); xsecNeg2[i]=atof(line.substr(line.find("<")+1).c_str())*norm;
@@ -286,8 +303,9 @@ void DrawLimitPlot(std::vector<double> mass, double ymin, double ymax, std::stri
 		expPos2[i]=xsecPos2[i]-xsec[i];
 
 		// std::cout<<"obs="<<obs[i]<<", exp="<<xsec[i]<<", -1sigma = "<<expNeg1[i]<<", +1sigma = "<<expPos1[i]<<std::endl;
-		std::cout<<"mX = "<<mass_string<<", obs = "<<obs[i]<<", exp limit ="<<xsec[i]<<", -1 sigma = "<<expNeg1[i]<<", +1 sigma = "<<expPos1[i]<<std::endl;
-		std::cout<<mass_string<<" &  "<<obs[i]<<" & "<<xsec[i]<<" & "<<expNeg1[i]<<" & "<<expPos1[i]<<" \\\\" <<std::endl;
+		//std::cout<<"mX = "<<mass_string<<", obs = "<<obs[i]<<", exp limit ="<<xsec[i]<<", -1 sigma = "<<expNeg1[i]<<", +1 sigma = "<<expPos1[i]<<std::endl;
+		//std::cout<<mass_string<<" &  "<<obs[i]<<" & "<<xsec[i]<<" & "<<expNeg1[i]<<" & "<<expPos1[i]<<" \\\\" <<std::endl;
+                std::cout<<mass_string<<" & "<<xsec[i]<<" \\\\" <<std::endl;  
 		// std::cout<<mass_string<<" & "<<xsec[i]<<" & "<<expNeg1[i]<<" & "<<expPos1[i]<<" & "<<expNeg2[i]<<" & "<<expPos2[i]<<" \\\\ "<<std::endl;
 
 	}
@@ -378,6 +396,34 @@ std::vector<double> br_hh={//32.552,593.385,959.755,573.531,308.096,162.880,89.1
 	0.00464996849485267,   
 	0.004672514523079795
 	};
+
+	// Radion curve
+	std::vector<double> masses_radion={
+	260,  
+		   300,
+		   400,
+		   500,
+		   600,
+		   700,
+		   750,
+		   800,
+		   900,
+         	   1000,
+                   1500};
+
+    std::vector<double> x_radion{
+    10.314910442540885,	
+    7.20114376233762,	
+    3.369927115848731,	
+    1.962250361817225,	
+    1.235987766884442,	
+    0.8043402650432466,	
+    0.6557538821852814,	
+    0.5434525134607641,	
+    0.3735615328391298,	
+    0.2618915924170746,	
+    0.054417137017588976};
+
 // Multiply graviton x-sec with appropriate Br(G->HH)*Br(H->bb)^2 * (k'/k)^2
 for(int i=0; i<masses_graviton.size(); ++i) 
 {
@@ -385,20 +431,24 @@ for(int i=0; i<masses_graviton.size(); ++i)
 	std::cout<<"Graviton mass = "<<masses_graviton[i]<<", x-sec = "<<x_graviton[i]<<std::endl;
 }
 
+
+
 //TGraph *g_graviton=new TGraph(masses_graviton.size(), &(masses_graviton[0]), &(x_graviton[0])); g_graviton->SetLineWidth(2); g_graviton->SetLineColor(kBlue+1); g_graviton->SetFillColor(kWhite);
 
-// Graviton curve
+// Graviton curve from github
 std::vector<double> masses_graviton_new={260, 300, 400, 500, 600, 700, 750, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500};
 std::vector<double> x_graviton_new={6.87e+00, 1.36e+02, 2.32e+02, 1.23e+02, 5.73e+01, 2.84e+01, 2.04e+01, 1.50e+01, 8.16e+00, 4.74e+00, 3.00e+00, 1.90e+00, 1.20e+00, 7.63e-01, 4.83e-01};
+//Radion curve from github
+std::vector<double> masses_radion_new={260, 300, 400, 500, 600, 700, 750, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500};
+std::vector<double> x_radion_new={7.64e+03, 7.13e+03, 2.92e+03, 1.50e+03, 9.08e+02, 5.84e+02, 4.74e+02, 3.93e+02, 2.70e+02, 1.90e+02, 1.38e+02, 1.01e+02, 7.38e+01, 5.39e+01, 3.93e+01};
 
 
 TGraph *g_graviton=new TGraph(masses_graviton_new.size(), &(masses_graviton_new[0]), &(x_graviton_new[0])); g_graviton->SetLineWidth(2); g_graviton->SetLineColor(kBlue+1); g_graviton->SetFillColor(kWhite);
-
-gROOT->SetStyle("Plain");
-// gStyle->>SetOptStat(000000000);
-
+TGraph *g_radion=new TGraph(masses_radion_new.size(), &(masses_radion_new[0]), &(x_radion_new[0])); g_radion->SetLineWidth(2); g_radion->SetLineColor(kBlue+1); g_radion->SetFillColor(kWhite);
 TStyle *tdrStyle=setTDRStyle();
-//tdrStyle->cd();
+gROOT->SetStyle("Plain");
+
+
 
 TGraphErrors *g_xsec=new TGraphErrors(nPoints, &(mass[0]), xsec);
 g_xsec->SetTitle("; m_{X} (GeV); #sigma(pp#rightarrowX) #times Br(X#rightarrowH(b#bar{b}) H(b#bar{b})) (fb)");
@@ -436,6 +486,7 @@ g_xsec->Draw("L");
 g_obs->SetMarkerStyle(20);	
 //g_obs->Draw("LP SAME");
 g_graviton->Draw("C same");
+//g_radion->Draw("C same");
 TLegend *leg=new TLegend(0.45, 0.65, 0.9, 0.85);
 // TLegend *leg=new TLegend(0.45, 0.5, 0.9, 0.7);
 leg->SetFillStyle(1); leg->SetFillColor(kWhite);
@@ -444,6 +495,7 @@ leg->AddEntry(g_xsec_1sigma, "Expected #pm 1 #sigma", "F");
 leg->AddEntry(g_xsec_2sigma, "Expected #pm 2 #sigma", "F");
 //leg->AddEntry(g_obs, "Observed Upper Limit", "LP");
 leg->AddEntry(g_graviton,"Bulk Graviton k=0.1","L");	
+//leg->AddEntry(g_radion,"Bulk Radion #lambda= 1 TeV, kl=35","L");	
 leg->SetFillColor(kWhite);
 leg->SetFillStyle(0);
 leg->SetTextSize(0.03);

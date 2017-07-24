@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 source runLimits_bias.sh gaus_exp 250_330 novo 550_1200 1
 source runLimits_bias.sh novo 285_625 novo 550_1200 2
+=======
+
+./runLimits_bias.sh gaus_exp 250_330 novo 550_1200 1
+./runLimits_bias.sh novo 285_625 novo 550_1200 2
+>>>>>>> Daniel/master
 
 echo "LMR"
 cp drawLimits_LMR.c PreselectedWithRegressionDeepCSV/limits_bias/LMR/

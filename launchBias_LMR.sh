@@ -12,10 +12,17 @@
   background_LMR_2="_${function_LMR_2}_${range_LMR_2}"
   if [ $5 -eq 1 ];
           then
+<<<<<<< HEAD
           masses_LMR=(260 270 300) #300) #260 270) # 300 350)
           strenght_LMR=(0.0 0.5 1.0) #0.0 0.5 1.0)
           else masses_LMR=(270 300 350 400 450 500 550 600 650) #300) #450 500 550 600 650)
           strenght_LMR=(0.0 0.1 0.2 0.3 0.5 0.6) #0.6) # 0.0 0.1 0.2 0.3 1.0)
+=======
+          masses_LMR=(260 270 300)  
+          strenght_LMR=(0.0 0.6 1.0) 
+          else masses_LMR=(270 300 350 400 450 500 550 600)
+          strenght_LMR=(0.0 0.1 0.2 0.3 0.6)
+>>>>>>> Daniel/master
   fi
   
   source_dir_LMR="PreselectedWithRegressionDeepCSV/LMRSelection_chi2/fit/"

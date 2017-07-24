@@ -17,6 +17,10 @@ def PDFsyst(mass, location):
   if(mass==1000) :
 	print("1000")
 	_file0 = ROOT.TFile.Open(path+"BulkGravTohhTohbbhbb_narrow_M-"+str(mass)+"_13TeV-madgraph.root")
+  if(mass==1200) :
+        print("1200")
+        _file0 = ROOT.TFile.Open(path+"BulkGravTohhTohbbhbb_narrow_M-"+str(mass)+"_13TeV-madgraph.root")
+
   tree = _file0.Get("tree")
   CountWeighted = _file0.Get("CountWeighted")
   CountWeightedLHEWeightPdf = _file0.Get("CountWeightedLHEWeightPdf")

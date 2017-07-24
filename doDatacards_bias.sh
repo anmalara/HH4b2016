@@ -11,6 +11,7 @@ datacardtype="f_${function}"
 data_file="w_background_${function}_${range}.root"
 pdfLogName="pdf.log"
 sigLogName="signal"${mass}"_sig.log"
+trgLogName="PDFs/trig.log"
 
 sig_norm=`grep 'norm =' ${dirName}/${sigLogName}| awk '{print $3/50}'`
 jec_norm=`grep 'JEC     lnN' ${dirName}/${sigLogName} | awk '{print $3}'`
@@ -18,15 +19,24 @@ jer_norm=`grep 'JER     lnN' ${dirName}/${sigLogName} | awk '{print $3}'`
 btag_norm=`grep 'btag    lnN' ${dirName}/${sigLogName} | awk '{print $3}'`
 pdf_norm=`grep 'PDF lnN' ${dirName}/${pdfLogName} | awk '{print $3}'`
 bkg_norm=`grep ' Background number of '${function}_${range}' = ' ${dirName}/${bgLogName} | awk '{print $6}'`
+trigger_norm=`grep 'trig'${mass}' ' ${trgLogName} | awk '{print $2}'`
 
 if [ $4 -eq 1 ];
         then
         case "$mass" in
+<<<<<<< HEAD
         550) bias=-0.1081;; 600) bias=0.1244;; 650) bias=0.1698;; 750) bias=-0.2380;; 800) bias=-0.1523;; 900) bias=-0.0907;; 1000) bias=0.0297;;
         esac
         else
         case "$mass" in
         550) bias=-0.0396;; 600) bias=0.095;; 650) bias=0.1535;; 750) bias=-0.1249;; 800) bias=-0.1706;; 900) bias=-0.1212;; 1000) bias=0.0359;;
+=======
+        550) bias=0.215;; 600) bias=0.057;; 650) bias=-0.078;; 750) bias=-0.203;; 800) bias=-0.130;; 900) bias=-0.044;; 1000) bias=0.050;;
+        esac
+        else
+        case "$mass" in
+        550) bias=0.215;; 600) bias=0.057;; 650) bias=-0.078;; 750) bias=-0.203;; 800) bias=-0.130;; 900) bias=-0.044;; 1000) bias=0.050;;
+>>>>>>> Daniel/master
         esac    
 fi
 
@@ -34,9 +44,11 @@ echo "bias" ${bias}
 echo sig_norm ${sig_norm}
 echo JEC ${jec_norm}
 echo JER ${jer_norm}
+echo trigger ${trigger_norm}
 echo bTag ${btag_norm}
 echo PDF ${pdf_norm}
 echo bkg_norm ${bkg_norm}
+
 
 #let's build a datacard!
 cat > ${dirName}/${dcardName} <<EOF
@@ -61,15 +73,14 @@ lumi_13TeV  lnN   1.026       -		-
 bTag      lnN     ${btag_norm}    -	-
 JER       lnN     ${jer_norm}   - 	-
 JEC       lnN     ${jec_norm}   -	-
-trigger   lnN     1.10    -	-
+trigger   lnN     ${trigger_norm}   -       -
 PDF       lnN     ${pdf_norm}   -	-
 shapeBkg_signal_bkg_HbbHbb__norm param 0.0 ${bias}
 EOF
 #bkg_norm rateParam HbbHbb 1 ${bkg_norm} 
 
-
 #now add the systematics to the card
-grep 'sg_' ${dirName}/${sigLogName} | grep ' param ' >> ${dirName}/${dcardName}
+#grep 'sg_' ${dirName}/${sigLogName} | grep ' param ' >> ${dirName}/${dcardName}
 grep 'par_'${function}'_' ${dirName}/${bgLogName} | grep ' param ' >> ${dirName}/${dcardName}
 
 cards+="${dirName}/${dcardName} "

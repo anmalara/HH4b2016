@@ -21,7 +21,7 @@ fi
 
 if [ $5 -eq 1 ];
         then
-        masses_MMR=(550 570 600 620 650 670 700 720 750 770 800 820 840 860 880 900 920 940 960 980 1000) #550 600 650 750 800 900 1000)
+        masses_MMR=(550 570 600 620 650 670 700 720 750 770 800 820 840 860 880 900 920 940 960 980 1000) 
         else masses_MMR=() 
 fi
 
@@ -30,7 +30,7 @@ for i in ${masses_MMR[@]}
 
 do
         cd $DIR
-        folder="PreselectedWithRegressionDeepCSV/limits/MMR/MMR_${i}${background_MMR}"
+        folder="PreselectedWithRegressionDeepCSV/limits_bias/MMR/MMR_${i}${background_MMR}"
 	if [ -d $folder ]
 	then
 	cd $folder
@@ -55,7 +55,7 @@ for i in ${masses_LMR[@]}
 
 do
         cd $DIR
-        folder="PreselectedWithRegressionDeepCSV/limits/LMR/LMR_${i}${background_LMR}"
+        folder="PreselectedWithRegressionDeepCSV/limits_bias/LMR/LMR_${i}${background_LMR}"
         if [ -d $folder ]
         then
         cd $folder

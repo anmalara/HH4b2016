@@ -304,9 +304,9 @@ void BackgroundPrediction_Kinematic_Split_MMR(int range_lo_1, int range_hi_1, do
     
     
     
-    RooRealVar par_novo_0("par_novo_0", "par_novo_0", 500, 650);
-    RooRealVar par_novo_1("par_novo_1", "par_novo_1", 0, 200);
-    RooRealVar par_novo_2("par_novo_2", "par_novo_2", -100, 100);
+    RooRealVar par_novo_0("par_novo_0", "par_novo_0", 300, 445);
+    RooRealVar par_novo_1("par_novo_1", "par_novo_1", 0.01, 300);
+    RooRealVar par_novo_2("par_novo_2", "par_novo_2", -10, 1);
     RooNovosibirsk f_novo("f_novo", "Background Prediction PDF", *x_2, par_novo_0, par_novo_1, par_novo_2);
     RooFitResult *r_novo=f_novo.fitTo(pred_2, RooFit::Range(range_lo_2, range_hi_2), RooFit::Save());
     
@@ -345,10 +345,10 @@ void BackgroundPrediction_Kinematic_Split_MMR(int range_lo_1, int range_hi_1, do
     c_novo->SaveAs((dest_dir+"/"+"BackgroundFit_"+type+".png").c_str());
     
     
-    RooRealVar par_crystal_1_0("par_crystal_1_0", "par_crystal_1_0", 0.01, 5.1);
-    RooRealVar par_crystal_1_1("par_crystal_1_1", "par_crystal_1_1", 0.01, 5.1);
-    RooRealVar par_crystal_1_2("par_crystal_1_2", "par_crystal_1_2", 400, 700);
-    RooRealVar par_crystal_1_3("par_crystal_1_3", "par_crystal_1_3", 9, 200);
+    RooRealVar par_crystal_1_0("par_crystal_1_0", "par_crystal_1_0", 0.01, 9.1);
+    RooRealVar par_crystal_1_1("par_crystal_1_1", "par_crystal_1_1", 0.01, 9.1);
+    RooRealVar par_crystal_1_2("par_crystal_1_2", "par_crystal_1_2", 400, 549);
+    RooRealVar par_crystal_1_3("par_crystal_1_3", "par_crystal_1_3", 10, 200);
     RevCrystalBall f_crystal_1("f_crystal_1","f_crystal_1", *x_2, par_crystal_1_0, par_crystal_1_1, par_crystal_1_2, par_crystal_1_3);
     RooFitResult *r_crystal_1=f_crystal_1.fitTo(pred_2, RooFit::Range(range_lo_2, range_hi_2), RooFit::Save());
     

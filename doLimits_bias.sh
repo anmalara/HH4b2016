@@ -14,8 +14,8 @@ function show_help {
 
 if [ $range_num_LMR -eq 1 ]; 
 	then
-	massesLMR=(260 270 300 350)
-	else massesLMR=(270 300 350 400 450 500 550 600 650)
+	massesLMR=() #260 270 300 350)
+	else massesLMR=() #270 300 350 400 450 500 550 600 650)
 fi
 cleanUp=0
 #rebin=10
@@ -52,8 +52,13 @@ done
 
 if [ $range_num_MMR -eq 1 ];
         then
+<<<<<<< HEAD
 	massesMMR=() #550 600 650 750 800 900 1000)
         else massesMMR=() #550 600 650 750 800 900 1000)
+=======
+	massesMMR=(1200)  #550 600 650 750 800 900 1000 1200)
+        else massesMMR=()
+>>>>>>> Daniel/master
 fi
 
 cleanUp=0
