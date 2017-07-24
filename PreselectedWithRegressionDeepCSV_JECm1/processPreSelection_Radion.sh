@@ -11,20 +11,20 @@ fi
 mkdir PDFs
 cp ../PDFs/deepCSV_BH_Moriond17.csv PDFs/
 
-root -l -b -q "../HbbHbb_PreSelection.cc++(\"$dir\", \"GluGluToRadionToHHTo4B_M-260_narrow_13TeV-madgraph\",\"JECm1\",\"JER\",\"Trig\",\"bTag\",\"../gravall-v25.weights.xml\")"
-root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-270_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
-root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-300_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
-root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-350_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
-root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-400_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
-root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-450_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
-root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-500_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
+#root -l -b -q "../HbbHbb_PreSelection.cc++(\"$dir\", \"GluGluToRadionToHHTo4B_M-260_narrow_13TeV-madgraph\",\"JECm1\",\"JER\",\"Trig\",\"bTag\",\"../gravall-v25.weights.xml\")"
+#root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-270_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
+#root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-300_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
+#root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-350_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
+#root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-400_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
+#root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-450_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
+#root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-500_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
 root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-550_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
-root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-600_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
-root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-650_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
-root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-750_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
-root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-800_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
+#root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-600_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
+#root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-650_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
+#root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-750_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
+#root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-800_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
 root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "GluGluToRadionToHHTo4B_M-900_narrow_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
-root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "RadionTohhTohbbhbb_narrow_M-1000_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
+#root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "RadionTohhTohbbhbb_narrow_M-1000_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
 root -l -b -q '../HbbHbb_PreSelection.cc++("$dir", "RadionTohhTohbbhbb_narrow_M-1200_13TeV-madgraph","JECm1","JER","Trig","bTag","gravall-v25.weights.xml")'
 
 rm -fr PDFs/
